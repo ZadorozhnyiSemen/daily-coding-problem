@@ -1,8 +1,6 @@
 package com.semen.z.problem_1;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
+import java.util.*;
 
 /**
  * Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
@@ -90,6 +88,26 @@ class SumOfAnyTwo {
             } else {
                 right--;
             }
+        }
+        return false;
+    }
+
+    /*
+     * Best approach - using hash. O(n), one cycle, low memory.
+     */
+    boolean fastWithHashCollection(int[] array, int sum) {
+        int length = array.length;
+        if (length < 2) {
+            return false;
+        }
+
+        HashSet<Integer> holder = new HashSet<>();
+
+        for (int item : array) {
+            if (holder.contains(item)) {
+                return true;
+            }
+            holder.add(sum - item);
         }
         return false;
     }

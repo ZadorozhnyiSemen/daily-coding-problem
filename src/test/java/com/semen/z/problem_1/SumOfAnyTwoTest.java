@@ -42,4 +42,12 @@ class SumOfAnyTwoTest {
         assertFalse(solver.fastWithSortAndBonus(edgeCase1, random));
         assertFalse(solver.fastWithSortAndBonus(edgeCase2, edgeCase2Sum));
     }
+
+    @Test
+    void testFastWithHash() {
+        assertTrue(solver.fastWithHashCollection(case1, case1Sum));
+        assertTrue(solver.fastWithHashCollection(case2, case2Sum));
+        assertFalse(solver.fastWithHashCollection(edgeCase1, random));
+        assertFalse(solver.fastWithHashCollection(edgeCase2, edgeCase2Sum));
+    }
 }
