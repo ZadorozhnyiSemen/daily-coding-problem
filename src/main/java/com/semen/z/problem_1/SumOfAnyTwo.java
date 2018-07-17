@@ -77,10 +77,6 @@ class SumOfAnyTwo {
         int right = array.length - 1;
 
         while (left < right) {
-            if (array[right] >= sum) {
-                right--;
-                continue;
-            }
             if (array[left] + array[right] == sum) {
                 return true;
             } else if (array[left] + array[right] < sum) {
