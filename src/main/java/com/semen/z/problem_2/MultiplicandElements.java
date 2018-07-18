@@ -9,22 +9,22 @@ import java.util.Arrays;
  *
  * Follow-up: what if you can't use division?
  */
-class MultiplicatedElements {
+class MultiplicandElements {
 
     /*
      * First try approach ignoring Bonus task just to make it work and see edge cases
      * Speed O(2n)
      */
-    int[] firstMethodNoBunus(int[] input) {
+    int[] firstMethodNoBonus(int[] input) {
         int length = input.length;
-        if (length <= 2) {
+        if (length < 2) {
             return input;
         }
 
         int[] result = new int[length];
-        int sum = 0;
+        int sum = 1;
         for (int element : input) {
-            sum += element;
+            sum *= element;
         }
 
         for (int i = 0; i < length; i++) {
@@ -38,7 +38,7 @@ class MultiplicatedElements {
      */
     int[] noDivision(int[] input) {
         int length = input.length;
-        if (length <= 2) {
+        if (length < 2) {
             return input;
         }
 
