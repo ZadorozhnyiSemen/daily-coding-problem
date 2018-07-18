@@ -92,3 +92,8 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+.idea/modules/daily-coding-problem_test.iml
+.idea/modules/daily-coding-problem_main.iml
+.idea/modules/daily-coding-problem.iml
+.idea/modules.xml
+.idea/compiler.xml
