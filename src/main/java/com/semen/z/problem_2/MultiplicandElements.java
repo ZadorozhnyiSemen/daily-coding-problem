@@ -60,4 +60,9 @@ class MultiplicandElements {
 
         return result;
     }
+
+    // TODO: one more approach
+    int[] bitManipulation(int[] input) {
+        return input;
+    }
 }
