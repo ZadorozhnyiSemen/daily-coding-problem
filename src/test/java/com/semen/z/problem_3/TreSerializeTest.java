@@ -3,6 +3,7 @@ package com.semen.z.problem_3;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class TreSerializeTest {
 
@@ -23,6 +24,9 @@ class TreSerializeTest {
                         null),
                 new Node<>("right", null, null));
 
-        assertEquals("left.left", solver.deserialize(solver.serialize(root)).left.left.data);
+        String serialize = solver.serialize(root);
+        Node deserialize = solver.deserialize(serialize);
+        assertNotNull(deserialize);
+        assertEquals("left.left", deserialize.left.left.data);
     }
 }

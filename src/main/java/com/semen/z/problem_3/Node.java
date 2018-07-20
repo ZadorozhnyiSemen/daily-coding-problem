@@ -11,4 +11,8 @@ public class Node<T> {
         this.left = left;
         this.right = right;
     }
+
+    public Node(T data) {
+        this.data = data;
+    }
 }
