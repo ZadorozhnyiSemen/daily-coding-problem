@@ -11,14 +11,32 @@ import java.util.Arrays;
  *
  * You can modify the input array in-place.
  */
-public class FindLostMinimum {
-    int find(int[] array) {
-        Arrays.sort(array);
-        return findLostMinimum(array);
-    }
+class FindLostMinimum {
 
-    private int findLostMinimum(int[] array) {
-        int index = 0;
-        return 0;
+    int findLostMinimum(int[] array) {
+        if (array.length <= 0) {
+            return 1;
+        }
+
+        Arrays.sort(array);
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 2) {
+                if (i == 0) {
+                    return 1;
+                } else {
+                    if (array[i - 1] <= 0) {
+                        return 1;
+                    }
+                }
+            }
+            if (array[i] > 0 && i != array.length - 1) {
+                if (array[i + 1] - array[i] > 1) {
+                    return array[i] + 1;
+                }
+            }
+        }
+        int last = array[array.length - 1];
+        return last <= 0 ? 1 : last + 1;
     }
 }
